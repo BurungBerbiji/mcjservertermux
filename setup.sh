@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Beware, this code is very messy and not optimized. I'm not a professional programmer, so please don't judge me. I'm just a student who is learning programming. I'm open to any suggestions and feedback. Thank you.
-
+# Hihahaha
 echo "Minecraft Server Setup Script for Arm64 Devices"
 sleep 3
 echo "Welcome to Minecraft Server Setup Script"
