@@ -153,11 +153,34 @@ echo "Generating Startup JVM Args"
 read -p "Enter the amount of RAM you want to allocate to the server (in MB): " ram
 echo -e "#!/bin/bash\ncd ~/minecraft_server\njava -Xms${ram}M -Xmx${ram}M -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1HeapRegionSize=8M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=40 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=30 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -XX:MaxGCPauseMillis=200 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=32 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar server.jar nogui" > ~/.MCJavaST/StartMCServer
 
+# Define the path to the setup.sh script
+SCRIPT_PATH="~/.MCJavaST/StartMCServer"
+
+# Make the script executable
+chmod +x "$SCRIPT_PATH"
+
+# Define the directory to add to PATH
+SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
+
+# Check if the script directory is already in PATH
+if [[ ":$PATH:" != *":$SCRIPT_DIR:"* ]]; then
+    # Add the script directory to PATH in .bashrc
+    echo "export PATH=\"\$PATH:$SCRIPT_DIR\"" >> "$HOME/.bashrc"
+    echo "Added $SCRIPT_DIR to PATH in .bashrc"
+else
+    echo "$SCRIPT_DIR is already in PATH"
+fi
+
+# Reload .bashrc to apply changes
+source "$HOME/.bashrc"
+
+echo "adding StartMCServer to PATH in .bashrc successfully."
+
 sleep 3
 
 echo "Setup Completed"
 sleep 1
-echo "You can now start the server by running MCServerStart anywhere."
+echo "You can now start the server by running StartMCServer anywhere."
 sleep 1
 echo "Don't forget to edit the server.properties file to customize your server settings"
 sleep 1
