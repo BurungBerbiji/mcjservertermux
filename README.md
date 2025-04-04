@@ -10,8 +10,9 @@
 ## Installation
  - Install Termux v0.118.1 or later
  ```bash
- pkg install git -y && git clone https://github.com/BurungBerbiji/mcjservertermux.git && chmod +x MCJavaServerTermux && cd MCJavaServerTermux && ./setup.sh
+ pkg install git -y && git clone https://github.com/BurungBerbiji/mcjservertermux.git && chmod +x ~/mcjservertermux && cd mcjservertermux && ./start.sh
 ```
+ Explanation: clone, chmod, run
 ## Code Status
  This script is still barebones. Fixup later. and Spigot,Paper option just need to add jar list, nothing serious. just didnt have time to add filelist
  CODE IS MESSY GUYS HELP ME 
