@@ -1,5 +1,5 @@
 > [!NOTE]
-> This code is Confusing. But it works. so no worries right?
+> Ambatulearn#!/usr/bin/bash
 
 # MCJavaServerTermux
 ## What's this?
