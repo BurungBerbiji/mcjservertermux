@@ -11,4 +11,4 @@ source ./Function/ServerInstallation.sh
 source ./Function/EULA.sh
 source ./Function/jvmgen.sh
 
-read -p "Finished, Reopen Termux. and Type StartMCServer to start MC Server" exit
+read -p "Finished, Reopen Termux. and Type StartMCServer to start MC Server" exitscript

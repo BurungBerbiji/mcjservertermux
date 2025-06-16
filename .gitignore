@@ -1,2 +1,6 @@
 # Ignoring it cause, duh! its testing!
 Testing/
+workflow
+altstart.sh
+Functions/test.sh
+Functions/ServerInstallerp2.sh
